@@ -1,23 +1,52 @@
-.input {
-    width: 11.5rem;
-    height: 2rem;
-    padding: 0 1rem;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    outline: none;
-    background-color: #fff;
-    color: #0d0c22;
-    transition: 0.3s ease;
-  }
-  
-  .input::placeholder {
-    color: #9e9ea7;
-  }
-  
-  .input:focus,
-  .input:hover {
-    outline: none;
-    border-color: #1098ad86;
-    background-color: #fff;
-    box-shadow: 0 0 0 2px rgba(16, 152, 173, 0.247);
-  }
+/** @format */
+
+select,
+input {
+  /* width: 11.5rem; */
+  /* height: 2rem; */
+  font-family: comingsoon;
+  padding: 0 0.4rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #fff;
+  color: #0d0c22;
+  transition: 0.3s ease;
+}
+
+select,
+input::placeholder {
+  color: #9e9ea7;
+}
+
+.filter-name input:focus,
+.filter-name input:hover {
+  outline: none;
+  border-color: var(--clr1);
+  background-color: #fff;
+  box-shadow: 0 0 0 1px var(--clr1a);
+}
+
+.filter-labels select,
+.filter-labels input:focus,
+.filter-labels select,
+.filter-labels input:hover {
+  outline: none;
+  border-color: var(--clr2);
+  background-color: #fff;
+  box-shadow: 0 0 0 1px var(--clr1a);
+}
+
+.toy-edit select,
+.toy-edit input:focus,
+.toy-edit select,
+.toy-edit input:hover {
+  outline: none;
+  border-color: var(--clr2);
+  background-color: #fff;
+  box-shadow: 0 0 0 1px var(--clr0a);
+}
+.toy-edit select,
+input {
+  background-color: #c6bfbf;
+}

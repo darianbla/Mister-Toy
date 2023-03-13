@@ -3,7 +3,8 @@
 import { toyService } from '../services/toy.service.js'
 
 export default {
-data() {
+
+  data() {
     return {
       toy: null,
     }
@@ -20,11 +21,11 @@ data() {
 </script>
 
 <template>
-    <section v-if="toy" class="toy-details">
-        <h1>{{toy.name}}</h1>
-        <span :class='"price" + toy.price'>price: {{toy.price}}</span>
-        <span>{{toy.inStock}}</span>
-        <router-link to="/toy">Back</router-link>
-    </section>
-  </template>
+  <section v-if="toy" class="toy-details">
+    <h1>{{ toy.name }}</h1>
+    <span :class='"price" + toy.price'>price: {{ toy.price }}</span>
+    <span>{{ toy.inStock }}</span>
+    <button class="btn btn-back"><router-link to="/toy">Back</router-link></button>
+  </section>
+</template>
 

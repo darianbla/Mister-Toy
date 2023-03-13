@@ -1,0 +1,22 @@
+/** @format */
+
+.toy-details {
+  display: flex;
+  border-radius: 1.6em;
+  margin-block-start: 1em;
+  color: var(--clr2);
+  background-color: var(--clr0);
+  width: fit-content;
+  padding: 3em;
+  gap: 1em;
+  justify-content: space-between;
+  justify-self: center;
+}
+
+.toy-details button {
+  background-color: var(--clr1);
+}
+
+.toy-details button:hover {
+  background-color: var(--clr1a);
+}

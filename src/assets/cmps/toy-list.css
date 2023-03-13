@@ -1,9 +1,11 @@
 /** @format */
 
 .toy-list {
+  color: var(--clr2);
   /* background-color: #251e1e; */
   display: grid;
   padding: 1em;
-  grid-gap: 1em;
+  grid-gap:2em;
+  justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(8rem, 14.8rem));
 }

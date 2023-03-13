@@ -1,22 +1,24 @@
 <template>
   <AppHeader />
-  <RouterView />
-  <!-- <ToyDetails /> -->
-  <!-- <ToyIndex /> -->
+  <section class="main-layout">
+    <RouterView />
+    <!-- <ToyDetails /> -->
+    <!-- <ToyIndex /> -->
+  </section>
   <AppFooter />
 </template>
 
 <script >
 import AppFooter from './components/AppFooter.vue';
 import AppHeader from './components/AppHeader.vue';
-import ToyDetails from './components/ToyDetails.vue';
+// import ToyDetails from './components/ToyDetails.vue';
 // import ToyIndex from './pages/ToyIndex.vue';
 export default {
   name: 'App',
   components: {
     AppHeader,
     AppFooter,
-    ToyDetails,
+    // ToyDetails,
     // ToyIndex,
   },
   created() {

@@ -1,5 +1,7 @@
 <template>
-    <h1>CoffeeRights 2023</h1>
+    <footer class="footer">
+        <h1>CoffeeRights 2023</h1>
+    </footer>
 </template>
 
 <script>

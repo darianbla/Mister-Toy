@@ -20,8 +20,12 @@ export default {
     <!-- <span>🐛</span> -->
     <h4>{{ toy.name }}</h4>
     <span :class='"price" + toy.severity'>price: {{ toy.price }}</span>
-      <!-- <img src={{toy.img}} alt=""> -->
-    <button @click="onRemove(toy._id)">X</button>
+    <div class="actions">
+      <router-link :to="'/toy/' + toy._id">Details</router-link>
+      <router-link :to="'/toy/edit/' + toy._id"> Edit</router-link>
+    </div>
+    <!-- <img src={{toy.img}} alt=""> -->
+    <button class="btn btn-close" @click="onRemove(toy._id)"><i class="fa-solid fa-trash-can"></i></button>
   </div>
 </template>
 

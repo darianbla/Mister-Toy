@@ -1,0 +1,14 @@
+/** @format */
+
+.toy-filter {
+  background-color: var(--clr0);
+  color: var(--clr2);
+  display: flex;
+  padding: 1em .4em;
+  /* gap: 2em; */
+  justify-content: space-around;
+}
+
+.filter-price span {
+    padding: 0 1em;
+}

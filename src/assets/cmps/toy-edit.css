@@ -1,0 +1,31 @@
+/** @format */
+
+.toy-edit {
+  display: flex;
+  border-radius: 1.6em;
+  margin-block-start: 1em;
+  color: var(--clr2);
+  background-color: var(--clr0);
+  width: fit-content;
+  padding: 2em;
+  gap: 1em;
+  justify-content: space-between;
+  justify-self: center;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  padding:1em 0 0 0;
+}
+
+.toy-edit button {
+  border: 0;
+  color: var(--clr2);
+  background-color: var(--clr1);
+}
+
+.toy-edit button:hover {
+  background-color: var(--clr1a);
+}
