@@ -1,6 +1,6 @@
 
 <template>
-  <h1>The Welcome cmp</h1>
+  <h1>THE BEST GIFTS FOR EVERY AGE</h1>
 </template>
 
 <script>

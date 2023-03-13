@@ -1,15 +1,19 @@
 import { createStore } from 'vuex'
 import { toyService } from '../services/toy.service'
+import { toyStore } from './toy.store.js'
+// import { userStore } from './user.store.js'
 export const store = createStore({
  state: {
-  msg: 'Store Is Running'
+  msg: 'Store Is Running',
+  toys: [],
  },
- mutations: {},
- actions: {},
  getters: {
   getMsg(state) {
    return state.msg
   }
  },
- modules: {}
+ modules: {
+    toyStore,
+    // userStore,
+ }
 })

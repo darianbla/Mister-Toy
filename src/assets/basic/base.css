@@ -1,0 +1,21 @@
+/** @format */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: comingSoon;
+  /* background: hsl(33, 98%, 53%); */
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr2);
+}
+
+img {
+  width: 100%;
+}
