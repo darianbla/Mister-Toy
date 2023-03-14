@@ -48,7 +48,7 @@ function save(toyToSave) {
 function remove(toyId) {
     // return storageService.remove(KEY, toyId)
     return httpService.delete(BASE_URL + toyId)
-    // resturn httpService.delete(BASE_URL, toyId).then(res => res.data)
+    // return httpService.delete(BASE_URL, toyId).then(res => res.data)
 }
 
 function getEmptyToy() {

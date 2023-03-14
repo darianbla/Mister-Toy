@@ -24,7 +24,7 @@ export default {
             <p class="toy-value">{{ toy.price }}</p>
         </section>
         <div class="tools flex" v-if="hover">
-            <button @click="$emit('removed')" class="btn btn-close">
+            <button @click="$emit('removed', toy._id)" class="btn btn-close">
                 <span><i class="fa-regular fa-trash-can"></i></span>
             </button>
             <RouterLink :to="'/toys/edit/' + toy._id" class="btn">

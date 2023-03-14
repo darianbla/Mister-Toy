@@ -16,8 +16,32 @@
                     <path style="" fill="var(--clr0)"
                         d="M308.298,213.585c-21.826,0-39.583,17.757-39.583,39.584c0,21.825,17.757,39.582,39.583,39.582 c21.827,0,39.584-17.757,39.584-39.582C347.882,231.342,330.125,213.585,308.298,213.585z M308.298,284.251 c-17.139,0-31.083-13.943-31.083-31.082c0-17.14,13.944-31.084,31.083-31.084c17.14,0,31.084,13.944,31.084,31.084 C339.382,270.308,325.438,284.251,308.298,284.251z">
                     </path>
-                    <!-- <g class="wheel-container" :class="{ hover }">
-                        <path class="wheel"  style="" fill="var(--clr0)"
+                    <g id="layer1" class="bubles" :class="{ hover }">
+                        <ellipse
+                            style="fill:#fefefe;stroke:var(--clr0);stroke-width:2.179;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
+                            id="path234" cx="103.80487" cy="143.42307" rx="10" ry="10" />
+                        <rect
+                            style="fill:#fefefe;stroke:var(--clr0);stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
+                            id="rect950" width="4" height="4" x="105.53429" y="137.611206" ry="5.9230771" rx="5.9230771" />
+                    </g>
+                    <g id="layer1" class="bubles1" :class="{ hover }">
+                        <ellipse
+                            style="fill:#fefefe;stroke:var(--clr0);stroke-width:2.179;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
+                            id="path234" cx="103.80487" cy="143.42307" rx="10" ry="10" />
+                        <rect
+                            style="fill:#fefefe;stroke:var(--clr0);stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
+                            id="rect950" width="4" height="4" x="105.53429" y="137.611206" ry="5.9230771" rx="5.9230771" />
+                    </g>
+                    <g id="layer1" class="bubles2" :class="{ hover }">
+                        <ellipse
+                            style="fill:#fefefe;stroke:var(--clr0);stroke-width:2.179;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
+                            id="path234" cx="103.80487" cy="143.42307" rx="10" ry="10" />
+                        <rect
+                            style="fill:#fefefe;stroke:var(--clr0);stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
+                            id="rect950" width="4" height="4" x="105.53429" y="137.611206" ry="5.9230771" rx="5.9230771" />
+                    </g>
+                    <!-- <g class="wheel-container" >
+                        <path class="wheel"  fill="var(--clr0)"
                             d="M308.298,213.585c-21.826,0-39.583,17.757-39.583,39.584c0,21.825,17.757,39.582,39.583,39.582 c21.827,0,39.584-17.757,39.584-39.582C347.882,231.342,330.125,213.585,308.298,213.585z M308.298,284.251 c-17.139,0-31.083-13.943-31.083-31.082c0-17.14,13.944-31.084,31.083-31.084c17.14,0,31.084,13.944,31.084,31.084 C339.382,270.308,325.438,284.251,308.298,284.251z">
                         </path>
                     </g> -->
@@ -58,7 +82,25 @@ export default {
     bottom: 10%; */
     /* transform-origin: 0px, 0px; */
     transition: transform .7s ease-in-out;
-    transform-origin: 0%, 0% ;
+    transform-origin: 0%, 0%;
+}
+
+.bubles {
+    opacity: 0;
+    transition: .4s;
+    transform: translate(200px, -129px);
+}
+
+.bubles1 {
+    opacity: 0;
+    transition: .6s;
+    transform: translate(220px, -110px);
+}
+
+.bubles2 {
+    opacity: 0;
+    transition: .7s;
+    transform: translate(250px, -133px);
 }
 
 .wheel {
@@ -74,9 +116,38 @@ export default {
 }
 
 .hover {
-    transform: rotateZ(3deg);
+    opacity: 1;
+    animation: move 10s ease-in-out infinite;
+    transform-origin: 50% 50%;
+    /* transform: rotateZ(3deg); */
     /* transform: translate(-3px, 145px); */
     /* transform: rotateX(305deg); */
     /* transform: rotateZ(5deg); */
 }
+
+/* @keyframes move {
+    0% {
+        transform: scale(1) translate(10px, -30px);
+    }
+
+    38% {
+        transform: scale(0.8, 1) translate(80vw, 30vh) rotate(160deg);
+    }
+
+    40% {
+        transform: scale(0.8, 1) translate(80vw, 30vh) rotate(160deg);
+    }
+
+    78% {
+        transform: scale(1.3) translate(0vw, 50vh) rotate(-20deg);
+    }
+
+    80% {
+        transform: scale(1.3) translate(0vw, 50vh) rotate(-20deg);
+    }
+
+    100% {
+        transform: scale(1) translate(10px, -30px);
+    }
+} */
 </style>

@@ -100,17 +100,12 @@ export const toyStore = {
         return savedToy
       })
     },
-    removeToy({ commit, dispatch, state }, payload) {
-      console.log('payload', payload)
+    removeToy({ commit, dispatch, state }, { toyId }) {
 
-      return toyService.remove(payload.toyId).then(() => {
-        const toyTxt = state.toys.find(
-          toy => toy._id === payload.toyId
-        ).txt
-        commit(payload) // {type: 'removeToy', toyId}
-        // const activity = { txt: `Removed the toy ${toyTxt}`, at: Date.now() }
-        // dispatch({ type: 'addActivity', activity })
-      })
+      return toyService.remove(toyId)
+        .then(() => {
+          commit({ type: 'removeToy', toyId })
+        })
     },
     getById({ commit }, { toyId }) {
       return toyService.getById(toyId).then(toy => {
