@@ -1,5 +1,18 @@
 .toy-preview {
+    position: relative;
+    display: grid;
+    grid-gap: .4em;
     background-color: var(--clr1);
     border-radius: 2em;
-    padding: 1em;
+    padding: 1.6em;
+    font-size: 1.6em;
+}
+
+
+.tools {
+    position: absolute;
+    bottom: 5%;
+    left: 15%;
+    /* justify-content: center; */
+    gap: .4em;
 }

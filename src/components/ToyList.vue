@@ -1,21 +1,20 @@
 <script>
-import toyPreview from './ToyPreview.vue'
+import ToyPreview from './ToyPreview.vue'
 export default {
+    name: 'ToyList',
     props: {
-        toys: {
-            type: Array,
-            required: true
-        }
+        toys: Array,
+        required: true,
+        default: [],
     },
-    methods: {},
     components: {
-        toyPreview,
-    }
+        ToyPreview,
+    },
 }
 </script>
 <template>
-    <section v-if="toys.length" className="toy-list">
-        <toy-preview v-for="toy in toys" :toy="toy" :key="toy._id" @removeToy="$emit('removeToy', $event)" />
-    </section>
-    <section v-else class="toy-list">Ho-No! No Toys!</section>
+    <ul v-if="toys.length" class="clean-list toy-list">
+        <ToyPreview v-for="toy in toys" :key="toy._id" :toy="toy" @removed="$emit('removed', toy._id)" />
+    </ul>
+    <p v-else>No toys to show..</p>
 </template>

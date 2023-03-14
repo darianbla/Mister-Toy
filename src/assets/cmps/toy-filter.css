@@ -6,7 +6,7 @@
   display: flex;
   padding: 1em .4em;
   /* gap: 2em; */
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .filter-price span {

@@ -6,11 +6,13 @@
     <!-- <ToyIndex /> -->
   </section>
   <AppFooter />
+  <UserMessage/>
 </template>
 
 <script >
 import AppFooter from './components/AppFooter.vue';
 import AppHeader from './components/AppHeader.vue';
+import UserMessage from './components/UserMessage.vue';
 // import ToyDetails from './components/ToyDetails.vue';
 // import ToyIndex from './pages/ToyIndex.vue';
 export default {
@@ -18,6 +20,7 @@ export default {
   components: {
     AppHeader,
     AppFooter,
+    UserMessage,
     // ToyDetails,
     // ToyIndex,
   },

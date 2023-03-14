@@ -1,32 +1,40 @@
 <script>
 export default {
-  props: {
-    toy: {
-      type: Object,
-      required: true
-    }
-  },
-  methods: {
-    onRemove(toyId) {
-      this.$emit('removeToy', toyId)
+    data() {
+        return {
+            hover: false,
+        }
+
     },
-  },
+    name: 'ToyPreview',
+    emits: ['removed'],
+    props: {
+        toy: Object,
+    },
 }
 </script>
 
 
 <template>
-  <div className="toy-preview">
-    <!-- <span>🐛</span> -->
-    <h4>{{ toy.name }}</h4>
-    <span :class='"price" + toy.severity'>price: {{ toy.price }}</span>
-    <div class="actions">
-      <router-link :to="'/toy/' + toy._id">Details</router-link>
-      <router-link :to="'/toy/edit/' + toy._id"> Edit</router-link>
-    </div>
-    <!-- <img src={{toy.img}} alt=""> -->
-    <button class="btn btn-close" @click="onRemove(toy._id)"><i class="fa-solid fa-trash-can"></i></button>
-  </div>
+    <li class="toy-preview" @mouseover="hover = true" @mouseleave="hover = false">
+        <section>
+            <p>Toy Name:</p>
+            <p class="toy-value">{{ toy.name }}</p>
+            <p>Toy Price:</p>
+            <p class="toy-value">{{ toy.price }}</p>
+        </section>
+        <div class="tools flex" v-if="hover">
+            <button @click="$emit('removed')" class="btn btn-close">
+                <span><i class="fa-regular fa-trash-can"></i></span>
+            </button>
+            <RouterLink :to="'/toys/edit/' + toy._id" class="btn">
+                <span>Edit</span>
+            </RouterLink>
+            <RouterLink :to="'/toys/details/' + toy._id" class="btn">
+                <span>Details</span>
+            </RouterLink>
+        </div>
+    </li>
 </template>
 
                 

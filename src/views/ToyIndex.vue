@@ -1,21 +1,10 @@
 <script>
 import ToyFilter from '../components/ToyFilter.vue'
 import ToyList from '../components/ToyList.vue';
+import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js'
 
 export default {
     name: 'ToyIndex',
-    data() {
-        return {
-            sortBy: {
-                by: '',
-                desc: 1
-            },
-            bugs: [],
-            filterBy: { txt: '', page: 0, price: 1, labels: null, img: '' },
-            toggle: false,
-            totalPages: 0
-        }
-    },
     computed: {
         toys() {
             return this.$store.getters.toysToDisplay
@@ -23,15 +12,28 @@ export default {
 
     },
     methods: {
-        setFilterBy(filterBy) {
-            this.filterBy = filterBy
-            this.$store.dispatch({ type: 'loadToys', filterBy: this.filterBy })
-        },
         removeToy(toyId) {
-            this.$store
-                .dispatch({ type: 'removeToy', toyId })
+      this.$store
+        .dispatch({ type: 'removeToy', toyId })
+        .then(() => {
+          showSuccessMsg('toy removed')
+        })
+        .catch(err => {
+          showErrorMsg('Cannot remove toy')
+        })
+    },
+    setFilter(filterBy) {
+      this.$store.dispatch({ type: 'loadToys', filterBy })
+    }
+        // setFilterBy(filterBy) {
+        //     this.filterBy = filterBy
+        //     this.$store.dispatch({ type: 'loadToys', filterBy: this.filterBy })
+        // },
+        // removeToy(toyId) {
+        //     this.$store
+        //         .dispatch({ type: 'removeToy', toyId })
 
-        },
+        // },
     },
     components: {
         ToyList,
@@ -41,17 +43,17 @@ export default {
 </script>
 
 <template>
-    <h1>
-        our <span class="blue">t</span><span class="orange">o</span><span class="blue">ys</span><span
-            class="orange">!</span>
-    </h1>
-    <toy-filter @setFilterBy="setFilterBy"></toy-filter>
-    <!-- <router-link :to="'/toy/edit'"><button class="btn btn-add">Add Toy</button></router-link> -->
-    <toy-list v-if="toys" :toys="toys" @removeToy="removeToy">
-    </toy-list>
-
-    <!-- <ToyFilter @filter="setFilter" /> -->
-    <!-- {{ msg }} -->
+    <main class="toys-app">
+        <h1>
+            our <span class="blue">t</span><span class="orange">o</span><span class="blue">ys</span><span
+                class="orange">!</span>
+        </h1>
+        <router-link :to="'/toys/edit'"><button class="btn btn-add">Add Toy</button></router-link>
+        <toy-filter @setFilter="setFilter"></toy-filter>
+        <toy-list v-if="toys" :toys="toys" @removeToy="removeToy"/>
+        
+        <!-- <ToyFilter @filter="setFilter" /> -->
+    </main>
 </template>
 
 <style>

@@ -19,15 +19,15 @@ input::placeholder {
   color: #9e9ea7;
 }
 
-.filter-name input:focus,
-.filter-name input:hover {
+input:focus,
+input:hover {
   outline: none;
   border-color: var(--clr1);
   background-color: #fff;
-  box-shadow: 0 0 0 1px var(--clr1a);
+  /* box-shadow: 0 0 0 0px var(--clr1); */
 }
 
-.filter-labels select,
+/* .filter-labels select,
 .filter-labels input:focus,
 .filter-labels select,
 .filter-labels input:hover {
@@ -45,8 +45,10 @@ input::placeholder {
   border-color: var(--clr2);
   background-color: #fff;
   box-shadow: 0 0 0 1px var(--clr0a);
-}
+} */
 .toy-edit select,
 input {
-  background-color: #c6bfbf;
+  font-size: 1.2em;
+  justify-self: center;
+  background-color: #dbdbdb;
 }
